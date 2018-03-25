@@ -79,6 +79,17 @@ def winner(board)
     board[winning_combo.first]
   end
 end
+
+def play(board)
+  while !over?(board)
+    turn(board)
+  end
+  if won?(board)
+    puts "Congratulations #{winner(board)}!"
+  elsif draw?(board)
+    puts "Cat's Game!"
+  end
+end
  
   def display_board
     puts " #{@board[0]} | #{@board[1]} | #{@board[2]} "
