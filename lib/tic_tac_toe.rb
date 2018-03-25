@@ -25,6 +25,10 @@ end
 def position_taken?(board, index)
   board[index]== "X" || board[index] == "O"
 end
+
+def valid_move?(board, index)
+  index.between?(0,8) && !position_taken?(board, index)
+end
  
   def current_player
     turn_count % 2 == 0 ? "X" : "O"
