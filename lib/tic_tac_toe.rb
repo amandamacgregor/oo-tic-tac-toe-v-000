@@ -53,6 +53,22 @@ end
   def current_player(board)
   turn_count(board) % 2 == 0 ? "X" : "O"
 end
+
+def won?(board)
+  WIN_COMBINATIONS.detect do |combo|
+    board[combo[0]] == board[combo[1]] &&
+    board[combo[1]] == board[combo[2]] &&
+    position_taken?(board, combo[0])
+  end
+end
+
+def full?(board)
+  board.all?{|token| token == "X" || token == "O"}
+end
+
+def draw?(board)
+  !won?(board) && full?(board)
+end
  
   def display_board
     puts " #{@board[0]} | #{@board[1]} | #{@board[2]} "
