@@ -69,6 +69,10 @@ end
 def draw?(board)
   !won?(board) && full?(board)
 end
+
+def over?(board)
+  won?(board) || draw?(board)
+end
  
   def display_board
     puts " #{@board[0]} | #{@board[1]} | #{@board[2]} "
