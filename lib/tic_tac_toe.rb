@@ -70,11 +70,11 @@ def over?
   won? || draw?
 end
 
-def winner()
-  if winning_combo = won?
-    @board[winning_combo.first]
+def winner
+    if combo = won?
+      @board[combo[0]]
+    end
   end
-end
 
 def play
   while !over?
