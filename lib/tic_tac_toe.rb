@@ -70,7 +70,7 @@ def over?
   won? || draw?
 end
 
-def winner(@board)
+def winner()
   if winning_combo = won?
     @board[winning_combo.first]
   end
